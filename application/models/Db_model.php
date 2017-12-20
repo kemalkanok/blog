@@ -6,10 +6,10 @@ class DB_model extends CI_Model
 	{
 		parent::__construct();
 	}
-	public function get_all_entries($table)
+	public function get_all_entries()
 	{
 		$this->db->select("*");
-		$this->db->from($table);
+		$this->db->from($this->table);
 		$query = $this->db->get();
 		return $query->result();
 	}
